@@ -3,6 +3,7 @@
 import sys
 
 def main():
+    from math import sqrt, ceil
     filename: str = sys.argv[1]
     p: int = 0
     q: int = 0
@@ -16,7 +17,7 @@ def main():
         if n % 2 == 0:
             p, q = 2, n // 2
         else:
-            for p in range(3, (n // 2) + 1, 2):
+            for p in range(3, ceil(sqrt(n)) + 1):
                 if (n % p == 0):
                     q = n // p
                     break
